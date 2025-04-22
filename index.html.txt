@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipocas Gourmet da Villa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff8f0;
+      color: #4b2e2e;
+    }
+    header {
+      background-color: #6f4e37;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo img {
+      height: 50px;
+    }
+    header .contatos a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+    }
+    header .contatos a img {
+      height: 20px;
+      margin-right: 5px;
+    }
+    .titulo {
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin: 1rem 0 0.5rem;
+      color: #4b2e2e;
+    }
+    .subtitulo {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #8b5e3c;
+    }
+    .aviso {
+      max-width: 400px;
+      margin: 2rem;
+      background-color: #f7e9d2;
+      padding: 1rem;
+      border-left: 4px solid #a65e2e;
+      font-size: 0.95rem;
+    }
+    .cardapio {
+      padding: 2rem;
+      text-align: center;
+    }
+    .cardapio h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sabores-imgs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .sabores-imgs img {
+      width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .logo-no-cardapio {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .logo-no-cardapio img {
+      height: 80px;
+    }
+    footer {
+      background-color: #6f4e37;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="f07c3084-d56d-4fcf-8041-55c56495d6cb.png" alt="Logo Pipocas Gourmet da Villa" />
+    </div>
+    <div class="contatos">
+      <a href="https://wa.me/5511952702189" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />WhatsApp
+      </a>
+      <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" />Instagram
+      </a>
+    </div>
+  </header>
+
+  <h1 class="titulo">Pipocas Gourmet da Villa</h1>
+  <p class="subtitulo">Textura suave, sabor inesquecível!</p>
+
+  <div class="aviso">
+    <strong>Importante:</strong><br />
+    Pagamento 50% na encomenda e 50% na entrega. Aceitamos PIX e dinheiro.<br />
+    Entregamos via app ou retirada combinada.
+  </div>
+
+  <section class="cardapio">
+    <h2>Cardápio</h2>
+    <div class="sabores-imgs">
+      <!-- Inserir imagens dos sabores aqui -->
+      <!-- Exemplo: <img src="caminho/para/pipoca1.jpg" alt="Sabor Pipoca 1"> -->
+    </div>
+
+    <div class="logo-no-cardapio">
+      <img src="f07c3084-d56d-4fcf-8041-55c56495d6cb.png" alt="Logo Pipocas" />
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Pipocas Gourmet da Villa. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
+
+     
