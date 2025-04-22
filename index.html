@@ -1,4 +1,3 @@
-<!-- início do código -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -119,47 +118,39 @@
       }
     }
 
-    .cardapio-linha {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
+    .cardapio-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 10px;
+      border: 2px solid #ffcc80;
+    }
+
+    .preco {
+      text-align: center;
+      font-size: 16px;
       margin-bottom: 30px;
     }
 
-    .cardapio-item {
+    .sabores-grid {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 240px;
+      flex-wrap: wrap;
+      gap: 30px;
     }
 
-    .cardapio-img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid #ffcc80;
+    .sabor-item {
+      width: calc(50% - 15px);
     }
 
-    .nuvem-preco {
+    .nuvem-aviso {
       background-color: #fff3e0;
-      color: #4e342e;
-      border-radius: 25px;
-      padding: 18px;
+      color: #3e2723;
+      padding: 12px;
+      border-radius: 15px;
       text-align: center;
-      margin-top: 10px;
-      font-weight: 500;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nuvem-preco a {
-      text-decoration: none;
-      color: #4e342e;
-      font-weight: bold;
-    }
-
-    .nuvem-preco a:hover {
-      color: #ff5722;
+      font-size: 14px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     }
 
     h2,
@@ -167,6 +158,23 @@
       color: #ffcc80;
       font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
+    }
+
+    .nuvem-info {
+      background-color: #fff3e0;
+      color: #3e2723;
+      padding: 15px;
+      border-radius: 15px;
+      margin-left: 30px;
+      max-width: 400px;
+      font-size: 14px;
+    }
+
+    .embalagem-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .nuvem-avaliacao {
@@ -223,71 +231,81 @@
     <a onclick="mostrar('pagamento')">Pagamento</a>
     <a onclick="mostrar('entrega')">Entrega</a>
     <a onclick="mostrar('embalagem')">Embalagem Padrão</a>
-    <a onclick="mostrar('personalizada')">Embalagens Personalizadas</a>
+    <a onclick="mostrar('personalizadas')">Embalagens Personalizadas</a>
     <a onclick="mostrar('avaliacoes')">Avaliações</a>
   </aside>
 
   <main class="conteudo">
     <section class="secao" id="cardapio">
       <h2>Cardápio</h2>
-
-      <div class="cardapio-linha">
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="flordesal.jpg" alt="Flor de Sal">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Flor%20de%20Sal.">Flor de Sal - R$ 80,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+      <div class="nuvem-aviso">Todos os valores são para pacotes de 1kg. Para saber mais, clique no nome do sabor!</div>
+      <div class="sabores-grid">
+        <div class="sabor-item">
+          <img src="ninho.jpg" alt="Ninho" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20ninho" target="_blank">Ninho</a> - R$ 120,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="trufadechocolate.jpg" alt="Trufa de Chocolate">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Trufa%20de%20Chocolate.">Trufa de Chocolate - R$ 110,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="ovomaltine.jpg" alt="Ovomaltine" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20ovomaltine" target="_blank">Ovomaltine</a> - R$ 110,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="pacoca.jpg" alt="Paçoca">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Paçoca.">Paçoca - R$ 110,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="oreo.jpg" alt="Oreo" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20oreo" target="_blank">Oreo</a> - R$ 100,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="ninho.jpg" alt="Ninho">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho.">Ninho - R$ 120,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="pacoca.jpg" alt="Paçoca" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20pa%C3%A7oca" target="_blank">Paçoca</a> - R$ 110,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="ovomaltine.jpg" alt="Ovomaltine">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ovomaltine.">Ovomaltine - R$ 110,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="trufadechocolate.jpg" alt="Trufa de Chocolate" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20trufa%20de%20chocolate" target="_blank">Trufa de Chocolate</a> - R$ 110,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="oreo.jpg" alt="Oreo">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Oreo.">Oreo - R$ 100,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="flordesal.jpg" alt="Flor de Sal" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20flor%20de%20sal" target="_blank">Flor de Sal</a> - R$ 80,00</p>
         </div>
-
-        <div class="cardapio-item">
-          <img class="cardapio-img" src="colorida.jpg" alt="Ninho Colorido">
-          <div class="nuvem-preco">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho%20Colorido.">Ninho Colorido - R$ 130,00</a><br>
-            Clique no nome do sabor para ser redirecionado ao WhatsApp.
-          </div>
+        <div class="sabor-item">
+          <img src="colorida.jpg" alt="Ninho Colorido" class="cardapio-img">
+          <p class="preco"><a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20ninho%20colorido" target="_blank">Ninho Colorido</a> - R$ 130,00</p>
         </div>
       </div>
+    </section>
+
+    <section class="secao" id="pagamento" style="display: none">
+      <h3>Pagamento</h3>
+      <p>Modalidade aceita: Pix e dinheiro.</p>
+    </section>
+
+    <section class="secao" id="entrega" style="display: none">
+      <h3>Entrega</h3>
+      <p>Retirada no bairro Vila Anastácio ou o cliente solicita um motorista por aplicativo.</p>
+    </section>
+
+    <section class="secao" id="embalagem" style="display: none">
+      <h3>Embalagem padrão</h3>
+      <div class="embalagem-flex">
+        <img src="embalagem.jpeg" alt="Embalagem padrão" style="max-width: 280px; border-radius: 10px;">
+        <div class="nuvem-info">Os pacotes podem ser solicitados personalizados com tag! O valor adicional da tag é de R$ 0,60 por unidade.</div>
+      </div>
+    </section>
+
+    <section class="secao" id="personalizadas" style="display: none">
+      <h3>Embalagens Personalizadas</h3>
+      <p>Oferecemos a opção de personalização com tags para eventos! Ideal para festas, brindes e presentes.</p>
+    </section>
+
+    <section class="secao" id="avaliacoes" style="display: none">
+      <h3>Avaliações</h3>
+      <div class="nuvem-avaliacao">"Melhor pipoca gourmet que já comi!" — Mariana S.</div>
+      <div class="nuvem-avaliacao">"Sabor incrível e entrega rápida!" — João L.</div>
+      <div class="nuvem-avaliacao">"A embalagem é linda e o sabor é surreal." — Camila R.</div>
+
+      <h3>Deixe sua Avaliação</h3>
+      <form class="avaliar-form" action="#" method="post">
+        <input type="text" placeholder="Seu nome" required />
+        <textarea placeholder="Sua avaliação" required></textarea>
+        <button type="submit">Publicar</button>
+      </form>
     </section>
   </main>
 
@@ -301,4 +319,3 @@
 </body>
 
 </html>
-<!-- fim do código -->
