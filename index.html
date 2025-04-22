@@ -10,10 +10,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
     * {
+      transition: all 0.3s ease-in-out;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      transition: all 0.3s ease-in-out;
     }
 
     body {
@@ -35,6 +35,10 @@
       cursor: pointer;
     }
 
+    .logo-text:hover {
+      color: #ff5722;
+    }
+
     .contato {
       position: fixed;
       top: 30px;
@@ -51,6 +55,10 @@
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .contato a:hover {
+      color: #ff5722;
     }
 
     .contato img {
@@ -74,14 +82,18 @@
       color: #ffcc80;
       font-size: 12px;
       margin-bottom: 18px;
-      text-decoration: none;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .menu-lateral a::before {
       content: '🍿';
       margin-right: 8px;
       font-size: 20px;
+    }
+
+    .menu-lateral a:hover {
+      color: #ff5722;
     }
 
     .conteudo {
@@ -91,56 +103,69 @@
 
     .secao {
       margin-bottom: 50px;
+      animation: fadein 1s ease-in;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .cardapio-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      justify-content: flex-start;
     }
 
-    .sabor-card {
-      width: 30%;
+    .item-sabor {
+      flex: 0 0 calc(33.333% - 20px);
       background-color: #fff3e0;
       border-radius: 20px;
       padding: 15px;
       text-align: center;
       color: #3e2723;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .sabor-card img {
-      width: 100%;
-      height: 200px;
+    .item-sabor img {
+      max-width: 100%;
+      height: 140px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 2px solid #ffcc80;
     }
 
-    .sabor-card a {
-      color: #5d4037;
+    .item-sabor a {
       text-decoration: none;
+      color: #5d4037;
       font-weight: bold;
     }
 
-    .sabor-card a:hover {
-      color: #d07b39;
+    .item-sabor a:hover {
+      color: #ff5722;
     }
 
-    h2, h3 {
-      color: #ffcc80;
-      margin-bottom: 15px;
-    }
-
-    .texto-nuvem {
+    .nuvem-avaliacao,
+    .nuvem-embalagem {
       background-color: #fff3e0;
+      color: #3e2723;
       border-radius: 30px;
       padding: 20px;
-      margin-top: 10px;
-      font-size: 14px;
+      margin-bottom: 20px;
+      max-width: 600px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .avaliar-form input, .avaliar-form textarea {
+    .avaliar-form input,
+    .avaliar-form textarea {
       width: 100%;
       padding: 8px;
       margin-bottom: 12px;
@@ -161,13 +186,25 @@
       background-color: #3e2723;
     }
 
-    .nuvem-avaliacao {
-      background-color: #fff3e0;
-      border-radius: 30px;
-      padding: 20px;
-      margin-bottom: 20px;
-      max-width: 600px;
+    .texto-interno {
+      background-color: rgba(255, 243, 224, 0.95);
       color: #3e2723;
+      padding: 15px;
+      border-radius: 25px;
+      margin-top: 15px;
+    }
+
+    .embalagem-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .embalagem-container img {
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid #ffcc80;
     }
   </style>
 </head>
@@ -179,12 +216,10 @@
 
   <div class="contato">
     <a href="https://wa.me/5511952702189" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-      WhatsApp
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> WhatsApp
     </a>
     <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      Instagram
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
     </a>
   </div>
 
@@ -201,87 +236,69 @@
       <h2>Cardápio</h2>
       <div class="cardapio-grid">
         <!-- Blocos de sabores -->
-        <div class="sabor-card">
-          <img src="ninho.jpg" alt="Pipoca sabor Ninho">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Bom%20dia%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20ninho">Ninho</a><br>
-            1kg - R$ 120,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="flordesal.jpg" alt="Flor de Sal">
+          <p>1kg - R$ 80,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Flor%20de%20Sal">Flor de Sal</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="ovomaltine.jpg" alt="Pipoca sabor Ovomaltine">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20ovomaltine">Ovomaltine</a><br>
-            1kg - R$ 110,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="trufadechocolate.jpg" alt="Trufa de Chocolate">
+          <p>1kg - R$ 110,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Trufa%20de%20Chocolate">Trufa de Chocolate</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="oreo.jpg" alt="Pipoca sabor Oreo">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20sabor%20de%20oreo">Oreo</a><br>
-            1kg - R$ 100,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="pacoca.jpg" alt="Paçoca">
+          <p>1kg - R$ 110,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Paçoca">Paçoca</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="pacoca.jpg" alt="Pipoca sabor Paçoca">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sabor%20de%20pa%C3%A7oca">Paçoca</a><br>
-            1kg - R$ 110,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="ninho.jpg" alt="Ninho">
+          <p>1kg - R$ 120,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho">Ninho</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="trufadechocolate.jpg" alt="Pipoca sabor Trufa de Chocolate">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sabor%20de%20trufa%20de%20chocolate">Trufa de Chocolate</a><br>
-            1kg - R$ 110,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="ovomaltine.jpg" alt="Ovomaltine">
+          <p>1kg - R$ 110,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ovomaltine">Ovomaltine</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="colorida.jpg" alt="Pipoca sabor Ninho Colorida">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sabor%20ninho%20colorido">Ninho Colorido</a><br>
-            1kg - R$ 130,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="oreo.jpg" alt="Oreo">
+          <p>1kg - R$ 100,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Oreo">Oreo</a>
         </div>
 
-        <div class="sabor-card">
-          <img src="flordesal.jpg" alt="Pipoca sabor Flor de Sal">
-          <div class="texto-nuvem">
-            <a href="https://wa.me/5511952702189?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sabor%20flor%20de%20sal">Flor de Sal</a><br>
-            1kg - R$ 80,00<br>Para mais informações é só chamar via WhatsApp. Pode clicar no sabor que será redirecionado.
-          </div>
+        <div class="item-sabor">
+          <img src="colorida.jpg" alt="Ninho Colorido">
+          <p>1kg - R$ 130,00</p>
+          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho%20Colorido">Ninho Colorido</a>
         </div>
       </div>
     </section>
 
-    <section class="secao" id="pagamento" style="display:none;">
+    <section class="secao" id="pagamento" style="display: none;">
       <h3>Pagamento</h3>
-      <div class="texto-nuvem">
-        Aceitamos Pix e dinheiro.
-      </div>
+      <div class="nuvem-avaliacao">Aceitamos Pix e dinheiro. As informações para pagamento serão enviadas após o pedido.</div>
     </section>
 
-    <section class="secao" id="entrega" style="display:none;">
+    <section class="secao" id="entrega" style="display: none;">
       <h3>Entrega</h3>
-      <div class="texto-nuvem">
-        Retirada no bairro Vila Anastácio ou entrega via motorista por aplicativo, conforme a preferência do cliente.
+      <div class="nuvem-avaliacao">Retirada disponível no bairro Vila Anastácio. Também realizamos entrega via motorista por aplicativo (valor calculado no momento do envio).</div>
+    </section>
+
+    <section class="secao" id="embalagem" style="display: none;">
+      <h3>Embalagem padrão</h3>
+      <div class="embalagem-container">
+        <img src="embalagem.jpeg" alt="Embalagem padrão">
+        <div class="nuvem-embalagem">Os pacotes podem ser solicitados personalizados com tag. Valor adicional de R$ 0,60 por tag aplicada.</div>
       </div>
     </section>
 
-    <section class="secao" id="embalagem" style="display:none;">
-      <h3>Embalagem Padrão</h3>
-      <img src="embalagem.jpeg" alt="Embalagem padrão" style="max-width:300px; border-radius:10px; display:block; margin-bottom:15px;">
-      <div class="texto-nuvem">
-        Os pacotes podem ser solicitados personalizados + tag (acréscimo de R$ 0,60 por pacote).
-      </div>
-    </section>
-
-    <section class="secao" id="avaliacoes" style="display:none;">
+    <section class="secao" id="avaliacoes" style="display: none;">
       <h3>Avaliações</h3>
       <div class="nuvem-avaliacao">"Melhor pipoca gourmet que já comi!" — Mariana S.</div>
       <div class="nuvem-avaliacao">"Sabor incrível e entrega rápida!" — João L.</div>
