@@ -21,9 +21,20 @@
       align-items: center;
     }
 
-    .logo {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text {
       font-size: 28px;
       font-weight: bold;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
     }
 
     .contato {
@@ -86,7 +97,10 @@
 
 <body>
   <header>
-    <div class="logo">Pipocas Gourmet da Villa</div>
+    <div class="logo-container">
+      <img src="/logo.jpeg" alt="Logo da Pipocas Gourmet da Villa" class="logo-img" />
+      <div class="logo-text">Pipocas Gourmet da Villa</div>
+    </div>
     <div class="contato">
       <a href="https://wa.me/5511952702189" target="_blank">📱 WhatsApp</a>
       <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">📷 Instagram</a>
@@ -94,9 +108,9 @@
   </header>
 
   <aside class="menu-lateral">
-    <a onclick="mostrar('pagamento')">Pagamento</a>
-    <a onclick="mostrar('entrega')">Entrega</a>
-    <a onclick="mostrar('embalagem')">Embalagem padrão</a>
+    <a onclick="mostrar('pagamento')">pagamento</a>
+    <a onclick="mostrar('entrega')">entrega</a>
+    <a onclick="mostrar('embalagem')">embalagem padrão</a>
   </aside>
 
   <main class="conteudo">
@@ -132,5 +146,3 @@
 </body>
 
 </html>
-
-     
