@@ -18,87 +18,81 @@
 
     body {
       font-family: 'Playfair Display', serif;
-      background-color: #ffe0b2; /* Cor doce, lembrando doce de leite */
-      color: #3e2723; /* Marrom escuro para texto */
+      background-color: #fbe9e7;
+      color: #3e2723;
     }
 
     header {
-      background-color: #ffcc80; /* Cor suave, remetendo ao caramelo */
-      padding: 40px 20px;
+      background-color: #efebe9;
+      padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .logo-text {
-      font-size: 48px;
+      font-size: 42px;
       font-family: 'Great Vibes', cursive;
-      color: #4e342e; /* Marrom sofisticado */
+      color: #4e342e;
       cursor: pointer;
+    }
+
+    .logo-text:hover {
+      color: #6d4c41;
     }
 
     .contato {
       position: fixed;
       top: 30px;
-      right: 30px;
+      right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      z-index: 10;
+      gap: 15px;
     }
 
     .contato a {
       text-decoration: none;
-      color: #6d4c41; /* Marrom mais suave */
-      font-size: 14px; /* Fonte menor */
+      color: #6d4c41;
+      font-size: 14px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease-in-out;
+      gap: 6px;
     }
 
     .contato a:hover {
-      color: #4e342e; /* Tom mais intenso ao passar o mouse */
+      color: #a1887f;
     }
 
     .contato img {
-      width: 18px; /* Ícones menores */
-      height: 18px;
+      width: 16px;
+      height: 16px;
     }
 
     .menu-lateral {
       width: 230px;
-      background-color: #ffb74d; /* Amarelo suave remetendo a caramelo */
+      background-color: #d7ccc8;
       padding: 25px;
       position: fixed;
       top: 120px;
       left: 0;
       height: calc(100% - 120px);
-      box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
     }
 
     .menu-lateral a {
       display: flex;
       align-items: center;
-      color: #4e342e;
-      font-size: 12px; /* Fonte menor no menu lateral */
-      text-transform: uppercase;
-      font-family: 'Playfair Display', serif;
+      color: #5d4037;
+      font-size: 12px;
       margin-bottom: 18px;
       cursor: pointer;
       text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .menu-lateral a:hover {
-      transform: scale(1.1);
-      color: #6d4c41; /* Cor de destaque */
     }
 
     .menu-lateral a::before {
-      content: '🍿'; /* Ícone mais relacionado a pipoca gourmet */
+      content: '\1F9E0'; /* Icone de pipoca gourmet */
       margin-right: 8px;
-      font-size: 16px; /* Ícone um pouco menor */
+    }
+
+    .menu-lateral a:hover {
+      color: #4e342e;
     }
 
     .conteudo {
@@ -112,15 +106,8 @@
     }
 
     @keyframes fadein {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .cardapio-img {
@@ -129,17 +116,6 @@
       display: block;
       margin: 0 auto 15px;
       border: 2px solid #a1887f;
-      animation: pipocaAnimation 2s infinite alternate;
-    }
-
-    @keyframes pipocaAnimation {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(-5px);
-      }
     }
 
     .preco {
@@ -148,8 +124,7 @@
       margin: 5px 0;
     }
 
-    h2,
-    h3 {
+    h2, h3 {
       color: #4e342e;
       font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
@@ -161,11 +136,10 @@
       padding: 20px;
       margin-bottom: 20px;
       max-width: 600px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     }
 
-    .avaliar-form input,
-    .avaliar-form textarea {
+    .avaliar-form input, .avaliar-form textarea {
       width: 100%;
       padding: 8px;
       margin-bottom: 12px;
@@ -185,40 +159,21 @@
     .avaliar-form button:hover {
       background-color: #5d4037;
     }
-
-    .acessibilidade {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #6d4c41;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .acessibilidade:hover {
-      background-color: #5d4037;
-    }
-
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo-text" onclick="window.location.href = '#cardapio'">Pipocas Gourmet da Villa</div>
+    <div class="logo-text" onclick="window.location.href='#cardapio'">Pipocas Gourmet da Villa</div>
   </header>
 
   <div class="contato">
     <a href="https://wa.me/5511952702189" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/WhatsApp_logo_2023.png" alt="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       WhatsApp
     </a>
     <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
       Instagram
     </a>
   </div>
@@ -274,10 +229,6 @@
       </form>
     </section>
   </main>
-
-  <div class="acessibilidade" onclick="alert('Ajustes de acessibilidade')">
-    A
-  </div>
 
   <script>
     function mostrar(id) {
