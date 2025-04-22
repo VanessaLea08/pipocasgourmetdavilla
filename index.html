@@ -160,6 +160,32 @@
     .avaliar-form button:hover {
       background-color: #3e2723;
     }
+
+    /* Estilo para Embalagem Padrão */
+    .embalagem-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .embalagem-img {
+      max-width: 280px;
+      border-radius: 12px;
+      border: 2px solid #ffcc80;
+    }
+
+    .embalagem-nuvem {
+      background-color: #fff8e1;
+      color: #4e342e;
+      padding: 20px;
+      border-radius: 30px;
+      box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      max-width: 450px;
+      font-weight: 500;
+    }
   </style>
 </head>
 
@@ -208,12 +234,18 @@
 
     <section class="secao" id="embalagem" style="display: none">
       <h3>Embalagem padrão</h3>
-      <img src="embalagem.jpeg" alt="Embalagem padrão" style="max-width: 300px; border-radius: 10px;">
+      <div class="embalagem-container">
+        <img class="embalagem-img" src="embalagem.jpeg" alt="Embalagem padrão">
+        <div class="embalagem-nuvem">
+          Os pacotes podem ser personalizados com tag especial para eventos ou presentes.  
+          A personalização possui um acréscimo de R$ 0,60 por tag no valor total do pacote solicitado.
+        </div>
+      </div>
     </section>
 
     <section class="secao" id="promocoes" style="display: none">
       <h3>Promoções</h3>
-      <p>A cada 1kg comprado, ganhe 100g grátis de outro sabor!</p>
+      <p>A cada 1kg comprado, ganhe 100g grátis de um outro sabor surpresa!</p>
     </section>
 
     <section class="secao" id="avaliacoes" style="display: none">
