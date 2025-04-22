@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipocas Gourmet da Villa</title>
+  <style>
+    body {
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      color: #4a2c2a;
+    }
+    header {
+      background-color: #ffb347;
+      text-align: center;
+      padding: 2rem;
+    }
+    header img {
+      max-width: 120px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #ffe0b3;
+      padding: 1rem;
+    }
+    nav a {
+      color: #4a2c2a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #ffb347;
+      padding-bottom: 0.5rem;
+    }
+    .cardapio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .produto {
+      background-color: #fff0e6;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ddd;
+    }
+    .produto h3 {
+      margin-top: 0;
+    }
+    footer {
+      background-color: #ffb347;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .contato a {
+      display: inline-block;
+      margin: 0.5rem;
+      color: #fff;
+      background-color: #4a2c2a;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO_PIPOCASG.jpeg" alt="Logo da Pipocas Gourmet da Villa">
+    <h1>Pipocas Gourmet da Villa</h1>
+    <p>Textura suave, sabor inesquecível!</p>
+  </header>
+  
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Antes de tudo, um recado importante!</h2>
+    <p>Pagamento 50% no ato da encomenda e 50% na entrega. Aceitamos PIX e dinheiro. Não trabalhamos com pronta entrega. Os pedidos podem ser retirados ou o cliente pode solicitar entregador por app.</p>
+    <p>Nossas pipocas são feitas com um método que preserva a essência do milho, com uma textura crocante e sabor especial. Perfeitas para festas, escolas, empresas, eventos, lembrancinhas e muito mais.</p>
+  </section>
+
+  <section id="cardapio">
+    <h2>Cardápio</h2>
+    <div class="cardapio">
+      <div class="produto">
+        <h3>Ninho</h3>
+        <p>50g: R$6,00 | 100g: R$10,00 | 1kg: R$120,00</p>
+      </div>
+      <div class="produto">
+        <h3>Ovomaltine</h3>
+        <p>50g: R$5,50 | 100g: R$9,50 | 1kg: R$110,00</p>
+      </div>
+      <div class="produto">
+        <h3>Trufa de Chocolate</h3>
+        <p>50g: R$5,50 | 100g: R$9,50 | 1kg: R$110,00</p>
+      </div>
+      <div class="produto">
+        <h3>Paçoca</h3>
+        <p>50g: R$5,50 | 100g: R$9,50 | 1kg: R$110,00</p>
+      </div>
+      <div class="produto">
+        <h3>Oreo</h3>
+        <p>50g: R$5,00 | 100g: R$9,00 | 1kg: R$100,00</p>
+      </div>
+      <div class="produto">
+        <h3>Ninho Colorido</h3>
+        <p>50g: R$6,50 | 100g: R$11,00 | 1kg: R$130,00</p>
+      </div>
+      <div class="produto">
+        <h3>Flor de Sal</h3>
+        <p>50g: R$5,00 | 100g: R$8,50 | 1kg: R$80,00</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <div class="contato">
+      <a href="https://wa.me/5511952702189" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pipocas Gourmet da Villa - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
