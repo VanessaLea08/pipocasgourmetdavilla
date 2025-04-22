@@ -1,325 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pipocas Gourmet da Villa</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
-    * {
-      transition: all 0.3s ease-in-out;
+    body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #ffccbc;
+      padding: 20px;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #3e2723;
-      color: #fff;
-    }
-
-    header {
-      background-color: #5d4037;
-      padding: 30px 20px;
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    .logo-text {
-      font-size: 42px;
-      font-family: 'Great Vibes', cursive;
-      color: #f57f17;
-      cursor: pointer;
-    }
-
-    .logo-text:hover {
-      color: #ff5722;
-    }
-
-    .contato {
-      position: fixed;
-      top: 30px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contato a {
-      text-decoration: none;
-      color: #d07b39;
+    .sidebar a {
+      display: block;
       font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .contato a:hover {
-      color: #ff5722;
-    }
-
-    .contato img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .menu-lateral {
-      width: 230px;
-      background-color: #4e342e;
-      padding: 25px;
-      position: fixed;
-      top: 120px;
-      left: 0;
-      height: calc(100% - 120px);
-    }
-
-    .menu-lateral a {
-      display: flex;
-      align-items: center;
-      color: #ffcc80;
-      font-size: 12px;
-      margin-bottom: 18px;
-      cursor: pointer;
+      color: #333;
+      margin: 10px 0;
       text-decoration: none;
     }
 
-    .menu-lateral a::before {
-      content: '🍿';
-      margin-right: 8px;
-      font-size: 20px;
+    .content {
+      margin-left: 240px;
+      padding: 20px;
     }
 
-    .menu-lateral a:hover {
-      color: #ff5722;
+    .section {
+      margin-bottom: 40px;
     }
 
-    .conteudo {
-      margin-left: 250px;
-      padding: 30px;
-    }
-
-    .secao {
-      margin-bottom: 50px;
-      animation: fadein 1s ease-in;
-    }
-
-    @keyframes fadein {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .cardapio-grid {
+    .cardapio-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: flex-start;
     }
 
-    .item-sabor {
-      flex: 0 0 calc(33.333% - 20px);
-      background-color: #fff3e0;
-      border-radius: 20px;
-      padding: 15px;
+    .sabor {
+      width: calc(33.33% - 20px);
       text-align: center;
-      color: #3e2723;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .item-sabor img {
-      max-width: 100%;
+    .sabor img {
+      width: 100%;
       height: 140px;
       object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #ffcc80;
-    }
-
-    .item-sabor a {
-      text-decoration: none;
-      color: #5d4037;
-      font-weight: bold;
-    }
-
-    .item-sabor a:hover {
-      color: #ff5722;
-    }
-
-    .nuvem-avaliacao,
-    .nuvem-embalagem {
-      background-color: #fff3e0;
-      color: #3e2723;
-      border-radius: 30px;
-      padding: 20px;
-      margin-bottom: 20px;
-      max-width: 600px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .avaliar-form input,
-    .avaliar-form textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .avaliar-form button {
-      background-color: #5d4037;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .avaliar-form button:hover {
-      background-color: #3e2723;
-    }
-
-    .texto-interno {
-      background-color: rgba(255, 243, 224, 0.95);
-      color: #3e2723;
-      padding: 15px;
-      border-radius: 25px;
-      margin-top: 15px;
-    }
-
-    .embalagem-container {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .embalagem-container img {
-      max-width: 300px;
+      border: 2px solid #e0e0e0;
       border-radius: 10px;
-      border: 2px solid #ffcc80;
+    }
+
+    .nuvem {
+      background: #ffe0b2;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .nuvem-embalagem {
+      background: #ffe0b2;
+      border-radius: 15px;
+      padding: 15px;
+      font-size: 14px;
+      max-width: 400px;
+    }
+
+    .info-section {
+      background-color: #ffe0b2;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      width: fit-content;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .sabor {
+        width: 100%;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="logo-text" onclick="window.location.href='#cardapio'">Pipocas Gourmet da Villa</div>
-  </header>
-
-  <div class="contato">
-    <a href="https://wa.me/5511952702189" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> WhatsApp
-    </a>
-    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
-    </a>
+  <div class="sidebar">
+    <h2>Pipocas Gourmet</h2>
+    <a href="#cardapio">Cardápio</a>
+    <a href="#pagamento">Pagamento</a>
+    <a href="#entrega">Entrega</a>
+    <a href="#embalagem">Embalagem Padrão</a>
+    <a href="#avaliacoes">Avaliações</a>
   </div>
 
-  <aside class="menu-lateral">
-    <a onclick="mostrar('cardapio')">Cardápio</a>
-    <a onclick="mostrar('pagamento')">Pagamento</a>
-    <a onclick="mostrar('entrega')">Entrega</a>
-    <a onclick="mostrar('embalagem')">Embalagem Padrão</a>
-    <a onclick="mostrar('avaliacoes')">Avaliações</a>
-  </aside>
-
-  <main class="conteudo">
-    <section class="secao" id="cardapio">
-      <h2>Cardápio</h2>
-      <div class="cardapio-grid">
-        <!-- Blocos de sabores -->
-        <div class="item-sabor">
+  <div class="content">
+    <div class="section" id="cardapio">
+      <h3>Cardápio</h3>
+      <div class="cardapio-container">
+        <!-- Sabor -->
+        <div class="sabor">
           <img src="flordesal.jpg" alt="Flor de Sal">
-          <p>1kg - R$ 80,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Flor%20de%20Sal">Flor de Sal</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Flor%20de%20Sal" target="_blank">Flor de Sal</a><br>
+            R$ 80,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="trufadechocolate.jpg" alt="Trufa de Chocolate">
-          <p>1kg - R$ 110,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Trufa%20de%20Chocolate">Trufa de Chocolate</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Trufa%20de%20Chocolate" target="_blank">Trufa de Chocolate</a><br>
+            R$ 110,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="pacoca.jpg" alt="Paçoca">
-          <p>1kg - R$ 110,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Paçoca">Paçoca</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Paçoca" target="_blank">Paçoca</a><br>
+            R$ 110,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="ninho.jpg" alt="Ninho">
-          <p>1kg - R$ 120,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho">Ninho</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho" target="_blank">Ninho</a><br>
+            R$ 120,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="ovomaltine.jpg" alt="Ovomaltine">
-          <p>1kg - R$ 110,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ovomaltine">Ovomaltine</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ovomaltine" target="_blank">Ovomaltine</a><br>
+            R$ 110,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="oreo.jpg" alt="Oreo">
-          <p>1kg - R$ 100,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Oreo">Oreo</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Oreo" target="_blank">Oreo</a><br>
+            R$ 100,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
-
-        <div class="item-sabor">
+        <div class="sabor">
           <img src="colorida.jpg" alt="Ninho Colorido">
-          <p>1kg - R$ 130,00</p>
-          <a href="https://wa.me/5511952702189?text=Olá,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho%20Colorido">Ninho Colorido</a>
+          <div class="nuvem">
+            <a href="https://wa.me/5511952702189?text=Bom%20dia,%20gostaria%20de%20saber%20mais%20informações%20sobre%20o%20sabor%20Ninho%20Colorido" target="_blank">Ninho Colorido</a><br>
+            R$ 130,00 (1kg)<br>
+            Para mais informações é só chamar via WhatsApp.
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="secao" id="pagamento" style="display: none;">
+    <div class="section" id="pagamento">
       <h3>Pagamento</h3>
-      <div class="nuvem-avaliacao">Aceitamos Pix e dinheiro. As informações para pagamento serão enviadas após o pedido.</div>
-    </section>
-
-    <section class="secao" id="entrega" style="display: none;">
-      <h3>Entrega</h3>
-      <div class="nuvem-avaliacao">Retirada disponível no bairro Vila Anastácio. Também realizamos entrega via motorista por aplicativo (valor calculado no momento do envio).</div>
-    </section>
-
-    <section class="secao" id="embalagem" style="display: none;">
-      <h3>Embalagem padrão</h3>
-      <div class="embalagem-container">
-        <img src="embalagem.jpeg" alt="Embalagem padrão">
-        <div class="nuvem-embalagem">Os pacotes podem ser solicitados personalizados com tag. Valor adicional de R$ 0,60 por tag aplicada.</div>
+      <div class="info-section">
+        Aceitamos pagamentos via PIX e dinheiro.
       </div>
-    </section>
+    </div>
 
-    <section class="secao" id="avaliacoes" style="display: none;">
+    <div class="section" id="entrega">
+      <h3>Entrega</h3>
+      <div class="info-section">
+        Retirada disponível na Vila Anastácio ou envio por motorista de aplicativo (a combinar).
+      </div>
+    </div>
+
+    <div class="section" id="embalagem">
+      <h3>Embalagem Padrão</h3>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="embalagempadrao.jpg" alt="Embalagem Padrão" style="width: 200px; height: auto; border-radius: 10px;" />
+        <div class="nuvem-embalagem">
+          Os pacotes podem ser personalizados com tag por R$ 0,60 cada. Solicite sua personalização!
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="avaliacoes">
       <h3>Avaliações</h3>
-      <div class="nuvem-avaliacao">"Melhor pipoca gourmet que já comi!" — Mariana S.</div>
-      <div class="nuvem-avaliacao">"Sabor incrível e entrega rápida!" — João L.</div>
-      <div class="nuvem-avaliacao">"A embalagem é linda e o sabor é surreal." — Camila R.</div>
-
-      <h3>Deixe sua Avaliação</h3>
-      <form class="avaliar-form" action="#" method="post">
-        <input type="text" placeholder="Seu nome" required />
-        <textarea placeholder="Sua avaliação" required></textarea>
-        <button type="submit">Publicar</button>
-      </form>
-    </section>
-  </main>
-
-  <script>
-    function mostrar(id) {
-      document.querySelectorAll('.secao').forEach(secao => secao.style.display = 'none');
-      const s = document.getElementById(id);
-      if (s) s.style.display = 'block';
-    }
-  </script>
+      <div class="info-section">
+        ⭐⭐⭐⭐⭐ “Simplesmente maravilhosas, crocantes e bem embaladas.”<br/>
+        ⭐⭐⭐⭐⭐ “As melhores pipocas que já comi! Atendimento excelente.”<br/>
+        ⭐⭐⭐⭐⭐ “Deliciosas e com sabor marcante. Recomendo!”
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
