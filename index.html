@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -18,64 +18,69 @@
 
     body {
       font-family: 'Playfair Display', serif;
-      background-color: #f8e0d1;
-      color: #4e342e;
+      background-color: #ffecd1; /* Cor suave e quente */
+      color: #3e2723; /* Tom elegante de marrom escuro */
     }
 
     header {
-      background-color: #efebe9;
-      padding: 30px 20px;
+      background-color: #fbe9e7; /* Cor de fundo suave */
+      padding: 40px 20px;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .logo-text {
-      font-size: 42px;
+      font-size: 48px;
       font-family: 'Great Vibes', cursive;
-      color: #4e342e;
+      color: #4e342e; /* Tom quente e sofisticado */
     }
 
     .contato {
       position: fixed;
       top: 30px;
-      left: 20px;
+      right: 30px;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      z-index: 10;
     }
 
     .contato a {
       text-decoration: none;
-      color: #3e2723;
-      font-size: 18px;
+      color: #3e2723; /* Cor escura para os ícones */
+      font-size: 22px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      transition: color 0.3s ease-in-out;
     }
 
     .contato a:hover {
-      color: #6d4c41;
+      color: #6d4c41; /* Cor sutil ao passar o mouse */
     }
 
     .menu-lateral {
       width: 230px;
-      background-color: #d7ccc8;
+      background-color: #d7ccc8; /* Cor neutra e sofisticada */
       padding: 25px;
       position: fixed;
       top: 120px;
       left: 0;
       height: calc(100% - 120px);
+      box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
     }
 
     .menu-lateral a {
       display: flex;
       align-items: center;
-      color: #5d4037;
-      font-size: 14px;
+      color: #4e342e;
+      font-size: 16px;
       text-transform: uppercase;
       font-family: 'Playfair Display', serif;
       margin-bottom: 18px;
       cursor: pointer;
       text-decoration: none;
+      transition: color 0.3s ease-in-out;
     }
 
     .menu-lateral a::before {
@@ -84,7 +89,7 @@
     }
 
     .menu-lateral a:hover {
-      color: #4e342e;
+      color: #6d4c41; /* Cor de destaque ao passar o mouse */
     }
 
     .conteudo {
@@ -159,9 +164,17 @@
       background-color: #6d4c41;
       color: white;
       border-radius: 50%;
-      padding: 10px;
+      padding: 15px;
+      font-size: 22px;
       cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease-in-out;
     }
+
+    .acessibilidade:hover {
+      background-color: #4e342e;
+    }
+
   </style>
 </head>
 
@@ -171,8 +184,14 @@
   </header>
 
   <div class="contato">
-    <a href="https://wa.me/5511952702189" target="_blank">🤎 WhatsApp</a>
-    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">🤎 Instagram</a>
+    <a href="https://wa.me/5511952702189" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/WhatsApp_logo_2023.png/640px-WhatsApp_logo_2023.png" alt="WhatsApp" style="width: 30px; height: 30px;">
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+      Instagram
+    </a>
   </div>
 
   <aside class="menu-lateral">
