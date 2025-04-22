@@ -1,3 +1,4 @@
+<!-- início do código -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -107,8 +108,15 @@
     }
 
     @keyframes fadein {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .cardapio-item {
@@ -120,7 +128,9 @@
     }
 
     .cardapio-img {
-      max-width: 220px;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
       border-radius: 12px;
       border: 3px solid #ffcc80;
     }
@@ -131,11 +141,22 @@
       border-radius: 25px;
       padding: 18px;
       max-width: 300px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
       font-weight: 500;
     }
 
-    h2, h3 {
+    .nuvem-preco a {
+      text-decoration: none;
+      color: #4e342e;
+      font-weight: bold;
+    }
+
+    .nuvem-preco a:hover {
+      color: #ff5722;
+    }
+
+    h2,
+    h3 {
       color: #ffcc80;
       font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
@@ -147,10 +168,11 @@
       padding: 20px;
       margin-bottom: 20px;
       max-width: 600px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .avaliar-form input, .avaliar-form textarea {
+    .avaliar-form input,
+    .avaliar-form textarea {
       width: 100%;
       padding: 8px;
       margin-bottom: 12px;
@@ -228,85 +250,62 @@
     <section class="secao" id="cardapio">
       <h2>Cardápio</h2>
 
+      <!-- item repetido com mesmo padrão para cada pipoca -->
       <div class="cardapio-item">
         <img class="cardapio-img" src="flordesal.jpg" alt="Flor de Sal">
-        <div class="nuvem-preco">Flor de Sal - 1kg: R$ 80,00</div>
+        <div class="nuvem-preco">
+          <div>Flor de Sal - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 80,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="trufadechocolate.jpg" alt="Trufa de Chocolate">
-        <div class="nuvem-preco">Trufa de Chocolate - 1kg: R$ 110,00</div>
+        <div class="nuvem-preco">
+          <div>Trufa de Chocolate - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 110,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="pacoca.jpg" alt="Paçoca">
-        <div class="nuvem-preco">Paçoca - 1kg: R$ 110,00</div>
+        <div class="nuvem-preco">
+          <div>Paçoca - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 110,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="ninho.jpg" alt="Ninho">
-        <div class="nuvem-preco">Ninho - 1kg: R$ 120,00</div>
+        <div class="nuvem-preco">
+          <div>Ninho - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 120,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="ovomaltine.jpg" alt="Ovomaltine">
-        <div class="nuvem-preco">Ovomaltine - 1kg: R$ 110,00</div>
+        <div class="nuvem-preco">
+          <div>Ovomaltine - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 110,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="oreo.jpg" alt="Oreo">
-        <div class="nuvem-preco">Oreo - 1kg: R$ 100,00</div>
+        <div class="nuvem-preco">
+          <div>Oreo - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 100,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
+        </div>
       </div>
 
       <div class="cardapio-item">
         <img class="cardapio-img" src="colorida.jpg" alt="Ninho Colorido">
-        <div class="nuvem-preco">Ninho Colorido - 1kg: R$ 130,00</div>
-      </div>
-    </section>
-
-    <section class="secao" id="pagamento" style="display: none">
-      <h3>Pagamento</h3>
-      <p>Modalidade aceita: Pix e dinheiro.</p>
-    </section>
-
-    <section class="secao" id="entrega" style="display: none">
-      <h3>Entrega</h3>
-      <p>Retirada no bairro Vila Anastácio ou o cliente solicita um motorista.</p>
-    </section>
-
-    <section class="secao" id="embalagem" style="display: none">
-      <h3>Embalagem padrão</h3>
-      <div class="embalagem-container">
-        <img class="embalagem-img" src="embalagem.jpeg" alt="Embalagem padrão">
-        <div class="embalagem-nuvem">
-          Os pacotes podem ser personalizados com tag especial para eventos ou presentes.  
-          A personalização possui um acréscimo de R$ 0,60 por tag no valor total do pacote solicitado.
+        <div class="nuvem-preco">
+          <div>Ninho Colorido - 1kg: <a href="https://wa.me/5511952702189" target="_blank">R$ 130,00</a></div>
+          <small>Para mais informações, chame no WhatsApp.</small>
         </div>
       </div>
-    </section>
-
-    <section class="secao" id="personalizada" style="display: none">
-      <h3>Embalagens Personalizadas</h3>
-      <p>Informações em breve.</p>
-    </section>
-
-    <section class="secao" id="promocoes" style="display: none">
-      <h3>Promoções</h3>
-      <p>A cada 1kg comprado, ganhe 100g grátis de um novo sabor surpresa!</p>
-    </section>
-
-    <section class="secao" id="avaliacoes" style="display: none">
-      <h3>Avaliações</h3>
-      <div class="nuvem-avaliacao">"Melhor pipoca gourmet que já comi!" — Mariana S.</div>
-      <div class="nuvem-avaliacao">"Sabor incrível e entrega rápida!" — João L.</div>
-      <div class="nuvem-avaliacao">"A embalagem é linda e o sabor é surreal." — Camila R.</div>
-
-      <h3>Deixe sua Avaliação</h3>
-      <form class="avaliar-form" action="#" method="post">
-        <input type="text" placeholder="Seu nome" required />
-        <textarea placeholder="Sua avaliação" required></textarea>
-        <button type="submit">Publicar</button>
-      </form>
     </section>
   </main>
 
@@ -320,3 +319,4 @@
 </body>
 
 </html>
+<!-- fim do código -->
