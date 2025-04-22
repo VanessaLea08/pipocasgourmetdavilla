@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipocas Gourmet da Villa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #5c3a2e;
+    }
+
+    header {
+      background-color: #f3c18f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .contato {
+      display: flex;
+      gap: 10px;
+    }
+
+    .contato a {
+      text-decoration: none;
+      color: #5c3a2e;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .menu-lateral {
+      width: 200px;
+      background-color: #fce7d3;
+      padding: 20px;
+      position: fixed;
+      top: 100px;
+      left: 0;
+      height: calc(100% - 100px);
+      box-sizing: border-box;
+    }
+
+    .menu-lateral a {
+      display: block;
+      color: #5c3a2e;
+      font-size: 13px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .conteudo {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .secao {
+      margin-bottom: 40px;
+    }
+
+    .cardapio-img {
+      max-width: 250px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .preco {
+      text-align: center;
+      font-size: 16px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Pipocas Gourmet da Villa</div>
+    <div class="contato">
+      <a href="https://wa.me/5511952702189" target="_blank">📱 WhatsApp</a>
+      <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">📷 Instagram</a>
+    </div>
+  </header>
+
+  <aside class="menu-lateral">
+    <a onclick="mostrar('pagamento')">Pagamento</a>
+    <a onclick="mostrar('entrega')">Entrega</a>
+    <a onclick="mostrar('embalagem')">Embalagem padrão</a>
+  </aside>
+
+  <main class="conteudo">
+    <section class="secao" id="cardapio">
+      <h2>Cardápio</h2>
+      <img class="cardapio-img" src="/mnt/data/f07c3084-d56d-4fcf-8041-55c56495d6cb.png" alt="Pipoca sabor Ninho">
+      <p class="preco">1kg - R$ 120,00</p>
+      <p class="preco">100g - R$ 12,00</p>
+    </section>
+
+    <section class="secao" id="pagamento" style="display: none">
+      <h3>Pagamento</h3>
+      <p>Modalidade aceita: Pix e dinheiro.</p>
+    </section>
+
+    <section class="secao" id="entrega" style="display: none">
+      <h3>Entrega</h3>
+      <p>Retirada no bairro Vila Anastácio ou o cliente solicita um motorista.</p>
+    </section>
+
+    <section class="secao" id="embalagem" style="display: none">
+      <h3>Embalagem padrão</h3>
+      <img src="/mnt/data/WhatsApp%20Image%202025-04-22%20at%2011.40.11.jpeg" alt="Embalagem padrão" style="max-width: 300px; border-radius: 8px;">
+    </section>
+  </main>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('.secao').forEach(secao => secao.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
+
+     
