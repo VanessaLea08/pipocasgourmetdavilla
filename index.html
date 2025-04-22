@@ -18,12 +18,12 @@
 
     body {
       font-family: 'Playfair Display', serif;
-      background-color: #fbe9e7;
-      color: #3e2723;
+      background-color: #3e2723;
+      color: #fff;
     }
 
     header {
-      background-color: #efebe9;
+      background-color: #5d4037;
       padding: 30px 20px;
       text-align: center;
     }
@@ -31,7 +31,12 @@
     .logo-text {
       font-size: 42px;
       font-family: 'Great Vibes', cursive;
-      color: #4e342e;
+      color: #f57f17;
+      cursor: pointer;
+    }
+
+    .logo-text:hover {
+      color: #ff5722;
     }
 
     .contato {
@@ -45,7 +50,7 @@
 
     .contato a {
       text-decoration: none;
-      color: #6d4c41;
+      color: #d07b39;
       font-size: 14px;
       display: flex;
       align-items: center;
@@ -53,12 +58,17 @@
     }
 
     .contato a:hover {
-      color: #a1887f;
+      color: #ff5722;
+    }
+
+    .contato img {
+      width: 20px;
+      height: 20px;
     }
 
     .menu-lateral {
       width: 230px;
-      background-color: #d7ccc8;
+      background-color: #4e342e;
       padding: 25px;
       position: fixed;
       top: 120px;
@@ -69,20 +79,21 @@
     .menu-lateral a {
       display: flex;
       align-items: center;
-      color: #5d4037;
-      font-size: 14px;
+      color: #ffcc80;
+      font-size: 12px;
       margin-bottom: 18px;
       cursor: pointer;
       text-decoration: none;
     }
 
     .menu-lateral a::before {
-      content: '\1F361';  /* Emoji de pipoca gourmet */
+      content: '🍿';
       margin-right: 8px;
+      font-size: 20px;
     }
 
     .menu-lateral a:hover {
-      color: #4e342e;
+      color: #ff5722;
     }
 
     .conteudo {
@@ -105,7 +116,7 @@
       border-radius: 12px;
       display: block;
       margin: 0 auto 15px;
-      border: 2px solid #a1887f;
+      border: 2px solid #ffcc80;
     }
 
     .preco {
@@ -115,7 +126,7 @@
     }
 
     h2, h3 {
-      color: #4e342e;
+      color: #ffcc80;
       font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
     }
@@ -138,7 +149,7 @@
     }
 
     .avaliar-form button {
-      background-color: #6d4c41;
+      background-color: #5d4037;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -147,19 +158,25 @@
     }
 
     .avaliar-form button:hover {
-      background-color: #5d4037;
+      background-color: #3e2723;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo-text">Pipocas Gourmet da Villa</div>
+    <div class="logo-text" onclick="window.location.href='#cardapio'">Pipocas Gourmet da Villa</div>
   </header>
 
   <div class="contato">
-    <a href="https://wa.me/5511952702189" target="_blank">🤎 WhatsApp</a>
-    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">🤎 Instagram</a>
+    <a href="https://wa.me/5511952702189" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      Instagram
+    </a>
   </div>
 
   <aside class="menu-lateral">
@@ -174,7 +191,7 @@
   <main class="conteudo">
     <section class="secao" id="cardapio">
       <h2>Cardápio</h2>
-      <img class="cardapio-img" src="imagens/embalagem.jpeg" alt="Pipoca sabor Ninho">
+      <img class="cardapio-img" src="/mnt/data/f07c3084-d56d-4fcf-8041-55c56495d6cb.png" alt="Pipoca sabor Ninho">
       <p class="preco">1kg - R$ 120,00</p>
       <p class="preco">100g - R$ 12,00</p>
     </section>
@@ -191,7 +208,7 @@
 
     <section class="secao" id="embalagem" style="display: none">
       <h3>Embalagem padrão</h3>
-      <img src="imagens/embalagem.jpeg" alt="Embalagem padrão" style="max-width: 300px; border-radius: 10px;">
+      <img src="embalagem.jpeg" alt="Embalagem padrão" style="max-width: 300px; border-radius: 10px;">
     </section>
 
     <section class="secao" id="promocoes" style="display: none">
