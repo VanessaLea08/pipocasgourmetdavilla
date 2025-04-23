@@ -1,216 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pipocas Gourmet da Villa</title>
-    <!-- Importando a fonte Poppins do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Ajustes de estilo */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .menu-lateral {
-            width: 220px;
-            background-color: #6f4f28; /* Cor marrom suave */
+
+        body {
+            background-color: #3A2A28;
+            color: #FF6B35;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            background-color: #2A1A18;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            color: #FF6B35;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .sidebar {
             position: fixed;
-            top: 0;
             left: 0;
-            height: 100%;
-            padding-top: 20px;
+            top: 30%;
+            background-color: #2A1A18;
+            padding: 1rem;
+            border-radius: 0 15px 15px 0;
         }
-        .menu-lateral a {
-            color: #fff;
-            padding: 12px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
+
+        .sidebar button {
+            background: none;
+            border: none;
+            color: #FFD700;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
         }
-        .menu-lateral a:hover {
-            background-color: #f4a261; /* Cor laranja suave */
+
+        .sidebar button:hover {
+            color: #FF6B35;
         }
-        .menu-lateral .social-links a {
-            color: #fff;
-            margin-top: 20px;
-            display: block;
-            font-size: 18px;
+
+        .content {
+            margin-left: 200px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .flavor-card {
+            background-color: #2A1A18;
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
+            transition: transform 0.3s;
         }
-        .cardapio {
-            margin-left: 240px;
-            padding: 30px;
+
+        .flavor-card:hover {
+            transform: translateY(-5px);
         }
-        h1 {
-            color: #6f4f28;
-            font-size: 36px;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .item-cardapio {
-            text-align: center;
-            margin-bottom: 30px;
-            display: inline-block;
-            width: 200px;
-            margin-right: 20px;
-        }
-        .item-cardapio img {
-            width: 150px;
-            height: 150px;
+
+        .flavor-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
-            border: 2px solid #dcdcdc;
-            transition: transform 0.3s ease;
+            margin-bottom: 1rem;
         }
-        .item-cardapio img:hover {
-            transform: scale(1.05);
+
+        .price {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
         }
-        .item-cardapio .descricao {
-            font-size: 14px;
-            margin-top: 10px;
-            color: #333;
-            font-weight: 600;
+
+        .social-icons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
-        .preco {
-            font-size: 16px;
-            margin-top: 10px;
-            color: #f4a261;
-            font-weight: 600;
+
+        .social-icons a {
+            color: #FFD700;
+            font-size: 2rem;
+            margin-left: 1rem;
+            transition: 0.3s;
         }
-        .nuvem {
-            display: inline-block;
-            background-color: #f4a261;
-            padding: 5px 10px;
+
+        .social-icons a:hover {
+            color: #FF6B35;
+        }
+
+        .tab-content {
+            display: none;
+            position: fixed;
+            left: 120px;
+            top: 30%;
+            background-color: #2A1A18;
+            padding: 2rem;
             border-radius: 15px;
-            margin-top: 10px;
-        }
-        .nuvem a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-        }
-        .embalagem-padrao,
-        .informacoes, .pagamento, .entrega, .avaliacoes {
-            margin-left: 240px;
-            padding: 30px;
-        }
-        .embalagem-padrao img,
-        .cardapio img {
-            width: 150px;
-            height: 150px;
-            border-radius: 8px;
-            border: 2px solid #dcdcdc;
-            margin-bottom: 20px;
-        }
-        .embalagem-padrao .descricao {
-            font-size: 16px;
-            color: #333;
-            font-weight: 600;
-        }
-        .informacoes h2, .pagamento h2, .entrega h2, .avaliacoes h2 {
-            font-size: 28px;
-            color: #6f4f28;
-            margin-bottom: 20px;
-        }
-        .informacoes p, .pagamento p, .entrega p, .avaliacoes p {
-            font-size: 16px;
-            color: #333;
-            line-height: 1.5;
+            width: 300px;
+            color: #FFD700;
         }
     </style>
 </head>
 <body>
-
-    <!-- Menu lateral -->
-    <div class="menu-lateral">
-        <a href="#cardapio">Cardápio</a>
-        <a href="#pagamento">Pagamento</a>
-        <a href="#entrega">Entrega</a>
-        <a href="#embalagem">Embalagem Padrão</a>
-        <a href="#avaliacoes">Avaliações</a>
-        <div class="social-links">
-            <a href="https://wa.me/5511952702189" target="_blank">WhatsApp</a>
-            <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">Instagram</a>
-        </div>
+    <div class="social-icons">
+        <a href="https://wa.me/5511952702189" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <!-- Conteúdo do cardápio -->
-    <div class="cardapio" id="cardapio">
-        <h1>Cardápio</h1>
-        <div class="item-cardapio">
-            <img src="flor_de_sal.jpg" alt="Flor de Sal">
-            <div class="descricao">Flor de Sal</div>
-            <div class="preco">R$ 80,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Flor%20de%20Sal%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="trufa_chocolate.jpg" alt="Trufa de Chocolate">
-            <div class="descricao">Trufa de Chocolate</div>
-            <div class="preco">R$ 110,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Trufa%20de%20Chocolate%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="pacoca.jpg" alt="Paçoca">
-            <div class="descricao">Paçoca</div>
-            <div class="preco">R$ 110,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Paçoca%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="ninho.jpg" alt="Ninho">
-            <div class="descricao">Ninho</div>
-            <div class="preco">R$ 120,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Ninho%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="ovomaltine.jpg" alt="Ovomaltine">
-            <div class="descricao">Ovomaltine</div>
-            <div class="preco">R$ 110,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Ovomaltine%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="oreo.jpg" alt="Oreo">
-            <div class="descricao">Oreo</div>
-            <div class="preco">R$ 100,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Oreo%20(1kg)">Comprar</a></div>
-        </div>
-        <div class="item-cardapio">
-            <img src="ninho_colorido.jpg" alt="Ninho Colorido">
-            <div class="descricao">Ninho Colorido</div>
-            <div class="preco">R$ 130,00 / 1kg</div>
-            <div class="nuvem"><a href="https://wa.me/5511952702189?text=Quero%20comprar%20Ninho%20Colorido%20(1kg)">Comprar</a></div>
-        </div>
+    <header class="header">
+        <h1 class="title">Pipocas Gourmet da Villa</h1>
+    </header>
+
+    <nav class="sidebar">
+        <button onclick="showTab('packaging')">🍿 Embalagem Padrão</button>
+        <button onclick="showTab('delivery')">🚚 Entrega</button>
+        <button onclick="showTab('payment')">💳 Pagamento</button>
+        <button onclick="showTab('reviews')">⭐ Avaliações</button>
+    </nav>
+
+    <div id="packaging" class="tab-content">
+        <h3>Embalagem Padrão</h3>
+        <p>Nossas embalagens podem ser personalizadas + tag!O valor possui um acréscimo quando a embalagem é personalizada e a tga custa R$ 0,60 centavos.</p>
+        <img src="embalagem.jpg" alt="Embalagem" style="width: 100%; margin-top: 1rem;">
     </div>
 
-    <!-- Aba Pagamento -->
-    <div class="pagamento" id="pagamento">
-        <h2>Pagamento</h2>
-        <p>Aceitamos pagamento via PIX e dinheiro.</p>
-        <p>Escolha a forma de pagamento mais conveniente para você.</p>
-    </div>
+    <main class="content">
+        <div class="flavor-card" onclick="window.open('https://wa.me/5511952702189?text=Gostaria de pedir Caramelo Salgado')">
+            <img src="salgada1.jpg" alt="Caramelo Salgado" class="flavor-img">
+            <h3>Flor de Sal</h3>
+            <p class="price">R$ 12,50</p>
+        </div>
+        
+        <div class="flavor-card" onclick="window.open('https://wa.me/5511952702189?text=Gostaria de pedir Chocolate Belga')">
+            <img src="doce1.jpg" alt="Chocolate Belga" class="flavor-img">
+            <h3>Chocolate Belga</h3>
+            <p class="price">R$ 14,90</p>
+        </div>
 
-    <!-- Aba Entrega -->
-    <div class="entrega" id="entrega">
-        <h2>Entrega</h2>
-        <p>A entrega pode ser retirada na Vila Anastácio ou realizada via motorista por aplicativo.</p>
-    </div>
+        <div class="flavor-card" onclick="window.open('https://wa.me/5511952702189?text=Gostaria de pedir Parmesão com Ervas')">
+            <img src="salgada2.jpg" alt="Parmesão com Ervas" class="flavor-img">
+            <h3>Parmesão com Ervas</h3>
+            <p class="price">R$ 13,75</p>
+        </div>
+    </main>
 
-    <!-- Aba Embalagem Padrão -->
-    <div class="embalagem-padrao" id="embalagem">
-        <h1>Embalagem Padrão</h1>
-        <img src="embalagem.jpg" alt="Embalagem Padrão">
-        <div class="descricao">Embalagem sofisticada e padrão para todos os sabores.</div>
-    </div>
-
-    <!-- Aba Avaliações -->
-    <div class="avaliacoes" id="avaliacoes">
-        <h2>Avaliações</h2>
-        <p>Confira as avaliações de nossos clientes sobre os nossos sabores gourmet!</p>
-    </div>
-
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
+        
+        // Show default tab
+        showTab('packaging');
+    </script>
 </body>
 </html>
