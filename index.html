@@ -2,28 +2,30 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pipocas Gourmet da Villa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      background-color: #4B2E2E; /* Marrom escuro */
+      font-family: Arial, sans-serif;
+      background-color: #3B2F2F; /* Marrom escuro */
       color: #fff;
+      display: flex;
     }
 
     aside {
       width: 250px;
-      background-color: #FF7F11; /* Laranja */
+      background-color: #FFA500; /* Laranja */
       padding: 20px;
-      height: 100vh;
       position: fixed;
+      height: 100vh;
       overflow-y: auto;
     }
 
     aside h2 {
       font-size: 20px;
+      color: #fff;
     }
 
     aside ul {
@@ -32,46 +34,51 @@
     }
 
     aside li {
-      margin: 20px 0;
+      margin: 15px 0;
       cursor: pointer;
+      font-weight: bold;
     }
 
     aside li::before {
       content: "🍿 ";
     }
 
+    .social-fixed {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-fixed a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      background-color: #1E90FF; /* Azul para contraste */
+      padding: 10px;
+      border-radius: 50px;
+      text-align: center;
+    }
+
     main {
       margin-left: 270px;
-      padding: 20px;
+      padding: 30px;
       flex: 1;
     }
 
     header h1 {
-      font-family: 'Georgia', serif;
-      font-size: 48px;
-      font-weight: bold;
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      text-align: center;
       color: #FFD700; /* Amarelo ouro */
-      text-shadow: 1px 1px 3px #000;
-    }
-
-    .social-links {
-      margin-top: 10px;
-    }
-
-    .social-links a {
-      margin-right: 10px;
-      color: #fff;
-      font-size: 24px;
-      text-decoration: none;
-    }
-
-    .menu-section {
-      margin-top: 40px;
+      margin-bottom: 30px;
     }
 
     .menu-section h2 {
       color: #FFA500;
-      margin-bottom: 20px;
+      margin-top: 30px;
     }
 
     .sabor {
@@ -79,12 +86,12 @@
     }
 
     .sabor h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 5px;
       color: #FFD700;
     }
 
-    .sabor .preco {
+    .preco {
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -92,14 +99,15 @@
     .fotos {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .fotos img {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
-      border: 2px solid #FFA500;
       border-radius: 10px;
+      border: 2px solid #FFA500;
     }
 
     .sabor a {
@@ -107,7 +115,7 @@
       margin-top: 10px;
       background-color: #25D366;
       color: white;
-      padding: 10px;
+      padding: 10px 15px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
@@ -115,79 +123,184 @@
 
     .aba-content {
       display: none;
-      margin-top: 10px;
-      color: #fff;
+      margin-top: 20px;
     }
 
     .ativo {
       display: block;
     }
+
+    .nuvem {
+      background-color: #fff;
+      color: #333;
+      border-radius: 30px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin-top: 15px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    form button {
+      background-color: #FFA500;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
 
+  <div class="social-fixed">
+    <a href="https://wa.me/5511952702189" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">Instagram</a>
+  </div>
+
   <aside>
     <h2>Menu</h2>
     <ul>
+      <li onclick="mostrarAba('cardapio')">Cardápio</li>
       <li onclick="mostrarAba('embalagem')">Embalagem padrão</li>
       <li onclick="mostrarAba('entrega')">Entrega</li>
       <li onclick="mostrarAba('pagamento')">Pagamento</li>
       <li onclick="mostrarAba('avaliacoes')">Avaliações</li>
+      <li onclick="mostrarAba('avisos')">Avisos Importantes</li>
     </ul>
 
-    <div id="embalagem" class="aba-content ativo">
-      <p>Usamos embalagens personalizadas que garantem a crocância e o frescor da pipoca.</p>
-      <img src="embalagem.jpeg" width="100%" style="margin-top:10px; border-radius: 10px;">
+    <div id="embalagem" class="aba-content">
+      <div class="nuvem">
+        <p>Realizamos embalagens personalizadas + tag, com valor adicional. Tag: R$ 0,60.</p>
+        <img src="embalagem.jpeg" alt="Embalagem" width="100%" style="border-radius:10px; margin-top:10px;">
+      </div>
     </div>
 
     <div id="entrega" class="aba-content">
-      <p>Entregamos em toda a região metropolitana de São Paulo com rapidez e segurança.</p>
+      <div class="nuvem">
+        <p>Somos uma loja virtual. Você pode retirar no bairro Vila Anastácio ou solicitar um motorista de aplicativo para entrega.</p>
+      </div>
     </div>
 
     <div id="pagamento" class="aba-content">
-      <p>Aceitamos Pix, cartões de débito e crédito.</p>
+      <div class="nuvem">
+        <p>Aceitamos pagamentos via Pix ou em dinheiro.</p>
+      </div>
     </div>
 
     <div id="avaliacoes" class="aba-content">
-      <p>Mais de 500 avaliações positivas no Instagram e WhatsApp. Cliente satisfeito é nosso maior orgulho!</p>
+      <div class="nuvem">
+        <form>
+          <label>Nome:</label>
+          <input type="text" placeholder="Seu nome">
+          <label>Comentário:</label>
+          <textarea rows="4" placeholder="Deixe seu feedback"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="avisos" class="aba-content">
+      <div class="nuvem">
+        <p>Pagamento 50% no ato da encomenda e 50% na entrega.</p>
+        <p>Encomendas devem ser feitas com no mínimo 5 dias de antecedência.</p>
+      </div>
     </div>
   </aside>
 
   <main>
     <header>
-      <h1>Pipoca Gourmet da Villa</h1>
-      <div class="social-links">
-        <a href="https://wa.me/5511952702189" target="_blank">📱 WhatsApp</a>
-        <a href="https://instagram.com/pipocasgourmetdavilla" target="_blank">📷 Instagram</a>
-      </div>
+      <h1>Pipocas Gourmet da Villa</h1>
     </header>
 
-    <section class="menu-section">
-      <h2>Nosso Cardápio</h2>
+    <section id="cardapio" class="menu-section aba-content ativo">
+      <h2>Cardápio</h2>
 
+      <!-- Repetição para cada sabor -->
       <div class="sabor">
-        <h3>Chocolate Belga</h3>
-        <p class="preco">R$ 15,00 (100g)</p>
+        <h3>Oreo</h3>
+        <p class="preco">R$ 100,00 (1kg)</p>
         <div class="fotos">
-          <img src="chocolate1.jpg" alt="Chocolate 1">
-          <img src="chocolate2.jpg" alt="Chocolate 2">
-          <img src="chocolate3.jpg" alt="Chocolate 3">
+          <img src="oreo.jpg" alt="Oreo">
+          <img src="oreo.jpg" alt="Oreo">
+          <img src="oreo.jpg" alt="Oreo">
         </div>
-        <a href="https://wa.me/5511952702189?text=Quero%20saber%20mais%20sobre%20a%20pipoca%20de%20Chocolate%20Belga!">Pedir no WhatsApp</a>
+        <a href="https://wa.me/5511952702189?text=Quero%20encomendar%20pipoca%20de%20Oreo!">Pedir no WhatsApp</a>
       </div>
 
       <div class="sabor">
-        <h3>Leite Ninho com Nutella</h3>
-        <p class="preco">R$ 17,00 (100g)</p>
+        <h3>Trufa de Chocolate</h3>
+        <p class="preco">R$ 110,00 (1kg)</p>
         <div class="fotos">
-          <img src="ninho1.jpg" alt="Ninho 1">
-          <img src="ninho2.jpg" alt="Ninho 2">
-          <img src="ninho3.jpg" alt="Ninho 3">
+          <img src="trufadechocolate.jpg" alt="Trufa">
+          <img src="trufadechocolate.jpg" alt="Trufa">
+          <img src="trufadechocolate.jpg" alt="Trufa">
         </div>
-        <a href="https://wa.me/5511952702189?text=Quero%20saber%20mais%20sobre%20a%20pipoca%20de%20Leite%20Ninho%20com%20Nutella!">Pedir no WhatsApp</a>
+        <a href="https://wa.me/5511952702189?text=Quero%20pipoca%20Trufa%20de%20Chocolate!">Pedir no WhatsApp</a>
       </div>
 
-      <!-- Adicione mais sabores aqui -->
+      <div class="sabor">
+        <h3>Paçoca</h3>
+        <p class="preco">R$ 110,00 (1kg)</p>
+        <div class="fotos">
+          <img src="pacoca.jpg" alt="Paçoca">
+          <img src="pacoca.jpg" alt="Paçoca">
+          <img src="pacoca.jpg" alt="Paçoca">
+        </div>
+        <a href="https://wa.me/5511952702189?text=Gostaria%20de%20pipoca%20de%20Paçoca!">Pedir no WhatsApp</a>
+      </div>
+
+      <div class="sabor">
+        <h3>Ninho</h3>
+        <p class="preco">R$ 120,00 (1kg)</p>
+        <div class="fotos">
+          <img src="ninho.jpg" alt="Ninho">
+          <img src="ninho.jpg" alt="Ninho">
+          <img src="ninho.jpg" alt="Ninho">
+        </div>
+        <a href="https://wa.me/5511952702189?text=Quero%20pipoca%20de%20Ninho!">Pedir no WhatsApp</a>
+      </div>
+
+      <div class="sabor">
+        <h3>Ninho Colorida</h3>
+        <p class="preco">R$ 130,00 (1kg)</p>
+        <div class="fotos">
+          <img src="colorida.jpg" alt="Ninho Colorida">
+          <img src="colorida.jpg" alt="Ninho Colorida">
+          <img src="colorida.jpg" alt="Ninho Colorida">
+        </div>
+        <a href="https://wa.me/5511952702189?text=Gostaria%20de%20pipoca%20Ninho%20Colorida!">Pedir no WhatsApp</a>
+      </div>
+
+      <div class="sabor">
+        <h3>Ovomaltine</h3>
+        <p class="preco">R$ 110,00 (1kg)</p>
+        <div class="fotos">
+          <img src="ovomaltine.jpg" alt="Ovomaltine">
+          <img src="ovomaltine.jpg" alt="Ovomaltine">
+          <img src="ovomaltine.jpg" alt="Ovomaltine">
+        </div>
+        <a href="https://wa.me/5511952702189?text=Quero%20pipoca%20Ovomaltine!">Pedir no WhatsApp</a>
+      </div>
+
+      <div class="sabor">
+        <h3>Flor de Sal</h3>
+        <p class="preco">R$ 80,00 (1kg)</p>
+        <div class="fotos">
+          <img src="flordesal.jpg" alt="Flor de Sal">
+          <img src="flordesal.jpg" alt="Flor de Sal">
+          <img src="flordesal.jpg" alt="Flor de Sal">
+        </div>
+        <a href="https://wa.me/5511952702189?text=Gostaria%20da%20pipoca%20Flor%20de%20Sal!">Pedir no WhatsApp</a>
+      </div>
 
     </section>
   </main>
@@ -200,6 +313,5 @@
       document.getElementById(abaId).classList.add('ativo');
     }
   </script>
-
 </body>
 </html>
